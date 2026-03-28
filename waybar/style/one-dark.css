@@ -207,3 +207,7 @@ window#waybar {
     padding: 3px 16px;
     letter-spacing: 0.5px;
 }
+/* Safely curve the network module only when updates are hidden */
+.modules-right > widget:first-child > #network {
+    border-radius: 10px 0 0 10px;
+}
