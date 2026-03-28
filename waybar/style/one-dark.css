@@ -11,7 +11,7 @@
 /* ── Reset ──────────────────────────────────────────────────────────────────── */
 * {
     font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Symbols Nerd Font", monospace;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     border: none;
     border-radius: 0;
@@ -42,7 +42,7 @@ window#waybar {
 #clock {
     background: rgba(30, 33, 39, 0.88);
     color: #abb2bf;
-    padding: 3px 10px;
+    padding: 4px 12px;
     margin: 4px 0;
 }
 
