@@ -57,15 +57,14 @@
 	// ── Network (WiFi signal % + internet state) ──────────────────────────────────
 	"network": {
 		"interface": "wlan0",
-		"format-wifi": "󰤨 {signalStrength}%",
-		"format-ethernet": "󰊗 {ipaddr}",
+		"format-wifi": "󰤨 {signalStrength}%   ↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+		"format-ethernet": "󰊗 {ipaddr}   ↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
 		"format-disconnected": "󰤭 off",
 		"tooltip-format-wifi": "{essid}  ·  {signalStrength}%  ·  {ipaddr}\n{frequency} GHz",
 		"tooltip-format-ethernet": "{ifname} · {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		"on-click": "nm-connection-editor",
-		"interval": 5,
-		"max-length": 18
+		"interval": 2
 	},
 
 	// ── Volume ────────────────────────────────────────────────────────────────────
