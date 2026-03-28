@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/*  clipboard.rasi  —  cliphist picker  (SUPER+V)                             */
-/*  Compact, no image panel, appears near the mouse cursor                    */
+/* clipboard.rasi  —  cliphist picker                                        */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
 * {
@@ -11,7 +10,6 @@
     fg1:        #5c6370;
     accent:     #c678dd;
     selected-bg:#3b2a4a;
-
     font:       "JetBrainsMono Nerd Font 12";
 
     background-color: transparent;
@@ -23,43 +21,38 @@
 }
 
 window {
-    width:            460px;
+    width:            750px;
     background-color: @bg0;
     border:           1px;
-    border-color: @border-col;
+    border-color:     @border-col;
     border-radius:    12px;
-    /* spawn near mouse — set in the exec command via -location 1 */
-    location:         center;
-    anchor:           center;
 }
 
 mainbox {
     orientation:      vertical;
-    background-color: transparent;
     spacing:          0;
-    children:         [ searchbar, listview ];
+    children:         [ inputbar, listview ];
 }
 
-searchbar {
+inputbar {
     orientation:      horizontal;
     background-color: @bg1;
     border-radius:    12px 12px 0 0;
-    padding:          12px 14px;
-    spacing:          8px;
+    padding:          10px 14px;
+    spacing:          10px;
     border:           0 0 1px 0;
     border-color:     @border-col;
     children:         [ prompt, entry ];
+    expand:           false;
 }
 
 prompt {
-    background-color: transparent;
     text-color:       @accent;
     font:             "JetBrainsMono Nerd Font Bold 13";
     vertical-align:   0.5;
 }
 
 entry {
-    background-color: transparent;
     text-color:       @fg0;
     placeholder:      "Search clipboard…";
     placeholder-color:@fg1;
@@ -69,11 +62,10 @@ entry {
 }
 
 listview {
-    background-color: transparent;
     layout:           vertical;
     spacing:          1px;
-    padding:          6px 6px;
-    lines:            10;
+    padding:          8px;
+    lines:            8;
     scrollbar:        false;
     fixed-height:     false;
     dynamic:          true;
@@ -81,20 +73,22 @@ listview {
 
 element {
     orientation:      horizontal;
-    background-color: transparent;
-    border-radius:    7px;
-    padding:          7px 10px;
+    border-radius:    8px;
+    padding:          8px 12px;
     cursor:           pointer;
 }
 
-element normal normal   { background-color: transparent;  text-color: @fg0; }
-element selected normal { background-color: @selected-bg; text-color: @fg0; border: 0 0 0 2px; border-color: @accent; }
+element normal normal   { text-color: @fg0; }
+element alternate normal { text-color: @fg0; }
+element selected normal { 
+    background-color: @selected-bg; 
+    text-color: @fg0; 
+    border: 0 0 0 2px; 
+    border-color: @accent;
+}
 element selected active { background-color: @selected-bg; text-color: @accent; }
 
 element-text {
     vertical-align:   0.5;
-    background-color: transparent;
     text-color:       inherit;
-    /* truncate long clipboard entries */
-    str:              "%s";
 }
