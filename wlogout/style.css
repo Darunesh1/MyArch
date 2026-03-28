@@ -1,59 +1,52 @@
 * {
     background-image: none;
     font-size: 14px;
+    font-weight: bold;
 }
 
 window {
-    background-color: rgba(12, 12, 12, 0.85); /* Darker semi-transparent overlay */
+    background-color: rgba(10, 10, 15, 0.8); /* Dark semi-transparent background */
 }
 
 button {
     color: #FFFFFF;
-    background-color: rgba(30, 30, 30, 0.5);
+    background-color: #2b2b36; /* The dark grey box color */
     outline-style: none;
     border: none;
+    border-radius: 20px; /* Uniform rounded corners */
+    margin: 20px; /* Equal spacing between all buttons */
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    border-radius: 12px;
-    margin: 10px;
-    box-shadow: none;
-    text-shadow: none;
-    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682); /* Smooth pop-out effect */
-}
-
-button:focus, button:active {
-    background-color: #3700B3;
+    background-position: center 30%; /* Pushes the icon slightly up to leave room for text */
     background-size: 25%;
+    transition: all 0.2s ease-in-out;
 }
 
-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    background-size: 35%;
-    border: 2px solid #3700B3;
+button:hover, button:active, button:focus {
+    background-color: #3b3b4a; /* Slightly lighter on hover */
+    background-size: 30%; /* Gentle zoom effect */
 }
 
-/* Individual Icon Pathing */
+/* Icon Paths */
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png"));
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/hibernate.png"), url("/usr/share/wlogout/icons/hibernate.png"));
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png"));
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png"));
 }
