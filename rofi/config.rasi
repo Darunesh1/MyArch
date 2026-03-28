@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/*  config.rasi  —  global rofi defaults                                      */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+configuration {
+    /* modes available in launcher (tab to cycle) */
+    modes:              "drun,run,window,filebrowser";
+
+    /* appearance */
+    show-icons:         true;
+    icon-theme:         "Papirus-Dark";
+    display-drun:       "󰀻  Apps";
+    display-run:        "  Run";
+    display-window:    "󰖯  Windows";
+    display-filebrowser:"  Files";
+
+    /* behaviour */
+    case-sensitive:     false;
+    cycle:              true;
+    filter:             "";
+    scroll-method:      0;
+    normalize-match:    true;
+
+    /* dmenu defaults (used by clipboard) */
+    dmenu {
+        display-name:   "󰅍  Clip";
+    }
+}

@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* launcher.rasi  —  Rofi app/run/window launcher                            */
+/* Layout: left = wallpaper + vertical buttons  ·  right = search + list     */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+configuration {
+    modes:              "drun,run,window";
+    show-icons:         true;
+    display-drun:       "󰀻";
+    display-run:        "";
+    display-window:     "󰖯";
+    drun-display-format:"{name}";
+}
+
+/* ── Colour tokens ──────────────────────────────────────────────────────── */
+* {
+    bg0:        #1e2127f0;
+    bg1:        #282c34f0;
+    border-col: #3e4452;
+    fg0:        #abb2bf;
+    fg1:        #5c6370;
+    accent:     #c678dd;
+    selected-bg:#a187b580; /* Lighter purple tint to match your screenshot */
+    
+    font:       "JetBrainsMono Nerd Font 12";
+    
+    background-color: transparent;
+    text-color:       @fg0;
+    border:           0;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+/* ── Window ─────────────────────────────────────────────────────────────── */
+window {
+    width:            850px;
+    height:           480px;
+    background-color: @bg0;
+    border-radius:    14px;
+    location:         center;
+    anchor:           center;
+    
+    /* Fixed border syntax */
+    border:           1px;
+    border-color:     @border-col;
+}
+
+mainbox {
+    orientation:      horizontal;
+    children:         [ imagebox, contentbox ];
+}
+
+/* ── Left: wallpaper image panel ────────────────────────────────────────── */
+imagebox {
+    width:            340px;
+    orientation:      horizontal;
+    
+    /* Fixed background-image syntax */
+    background-image: url("/home/darriour/Pictures/Wallpaper/current_wallpaper", width);
+    border-radius:    14px 0 0 14px;
+    padding:          20px;
+    children:         [ mode-switcher, dummy ];
+}
+
+/* Spacer to push buttons to the left */
+dummy {
+    expand:           true;
+}
+
+/* ── Mode switcher (Vertical floating buttons) ──────────────────────────── */
+mode-switcher {
+    orientation:      vertical;
+    spacing:          15px;
+    width:            45px;
+    vertical-align:   0.5;
+}
+
+button {
+    padding:          10px;
+    background-color: @bg0;
+    text-color:       @fg0;
+    border-radius:    100%;
+    cursor:           pointer;
+    font:             "JetBrainsMono Nerd Font 14";
+}
+
+button selected {
+    background-color: @selected-bg;
+    text-color:       #ffffff;
+}
+
+/* ── Right: search + list ───────────────────────────────────────────────── */
+contentbox {
+    expand:           true;
+    orientation:      vertical;
+    padding:          20px;
+    children:         [ inputbar, listview ];
+}
+
+/* ── Search header ──────────────────────────────────────────────────────── */
+inputbar {
+    background-color: @bg1;
+    border-radius:    8px;
+    padding:          12px 16px;
+    margin:           0 0 20px 0;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color:       @accent;
+    font:             "JetBrainsMono Nerd Font Bold 12";
+    vertical-align:   0.5;
+}
+
+entry {
+    placeholder:      "Search...";
+    placeholder-color:@fg1;
+    text-color:       @fg0;
+    cursor:           text;
+    vertical-align:   0.5;
+}
+
+/* ── Results list ───────────────────────────────────────────────────────── */
+listview {
+    columns:          1;
+    lines:            7;
+    spacing:          4px;
+    scrollbar:        false;
+    dynamic:          true;
+}
+
+element {
+    orientation:      horizontal;
+    padding:          10px 15px;
+    border-radius:    12px;
+    spacing:          15px;
+    cursor:           pointer;
+}
+
+element normal normal { text-color: @fg0; }
+element alternate normal { text-color: @fg0; }
+element selected normal {
+    background-color: @selected-bg;
+    text-color:       #ffffff;
+}
+
+element-icon {
+    size:             28px;
+    vertical-align:   0.5;
+}
+
+element-text {
+    vertical-align:   0.5;
+    text-color:       inherit;
+}
