@@ -8,8 +8,8 @@
 	"spacing": 0,
 
 	// ── Layout ─────────────────────────────────────────────────────────────────
-	"modules-left": ["custom/poweroff", "hyprland/workspaces"],
-	"modules-center": ["hyprland/window", "clock"],
+	"modules-left": ["custom/poweroff", "hyprland/workspaces", "hyprland/window"],
+	"modules-center": ["clock"],
 	"modules-right": [
 		"custom/updates",
 		"network",
