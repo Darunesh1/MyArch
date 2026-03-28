@@ -177,7 +177,7 @@ __package_manager () {
 }
 
 # Aliases
-alias c='clear' \
+alias cls='clear' \
     in='__package_manager install' \
     un='__package_manager remove' \
     up='__package_manager upgrade' \
