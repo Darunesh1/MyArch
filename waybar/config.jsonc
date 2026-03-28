@@ -53,7 +53,7 @@
 		"ignored-sinks": ["Easy Effects Sink"]
 	},
 	"network": {
-		"interface": "wlp3s0",
+		"interface": "wlan0",
 		"format": "{ifname}",
 		"format-wifi": "{essid} ({signalStrength}%) ",
 		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -65,7 +65,7 @@
 		"max-length": 50
 	},
 	"battery": {
-		"bat": "BAT2",
+		"bat": "BAT0",
 		"interval": 60,
 		"states": {
 			"warning": 30,
