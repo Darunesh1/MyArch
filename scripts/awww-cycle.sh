@@ -10,8 +10,11 @@ while true; do
     
     # Apply the wallpaper with a smooth transition
     # You can change the transition-type to: simple, fade, left, right, top, bottom, wipe, wave, grow, center
-    swww img "$IMG" --transition-fps 60 --transition-type random --transition-duration 2
-    
-    # Wait for the specified interval before changing again
+   # ... inside the while loop ...
+	awww img "$IMG" --transition-fps 60 --transition-type random --transition-duration 2
+
+	# Create a symlink to the current wallpaper
+	ln -sf "$IMG" /home/darriour/Pictures/Wallpaper/current_wallpaper
+	# ...    # Wait for the specified interval before changing again
     sleep $INTERVAL
 done
