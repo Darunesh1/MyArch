@@ -187,19 +187,23 @@ window#waybar {
 #custom-notification {
     color: #5c6370;
     font-size: 13px;
-    border-right: 1px solid rgba(62, 68, 82, 0.8);
+    /* Close the right pill since the clock is gone */
+    border-right: none; 
+    border-radius: 0 10px 10px 0;
+    margin: 4px 8px 4px 0;
+    padding-right: 14px;
 }
 
 #custom-notification.notification     { color: #e5c07b; }
 #custom-notification.dnd-notification { color: #5c6370; }
 #custom-notification.dnd-none         { color: #5c6370; }
 
-/* Clock — rightmost, closes the pill with rounded right cap */
+/* Center Clock — standalone rounded pill */
 #clock {
     color: #abb2bf;
     font-weight: 500;
-    border-radius: 0 10px 10px 0;
-    margin: 4px 8px 4px 0;
-    padding: 3px 14px 3px 10px;
+    border-radius: 10px; /* Fully rounded on all sides */
+    margin: 4px 0;
+    padding: 3px 16px;
     letter-spacing: 0.5px;
 }
