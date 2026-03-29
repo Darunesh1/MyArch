@@ -179,11 +179,11 @@ __package_manager () {
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Aliases
 alias cls='clear' \
-    in='__package_manager install' \
-    un='__package_manager remove' \
-    up='__package_manager upgrade' \
-    pl='__package_manager search installed' \
-    pa='__package_manager search all' \
+    in='__package_manager -S' \
+    un='__package_manager -Rns' \
+    up='__package_manager -Syu' \
+    pl='__package_manager -Qs' \
+    pa='__package_manager -Ss' \
     vc='code' \
     fastfetch='fastfetch --logo-type kitty' \
     ..='cd ..' \
