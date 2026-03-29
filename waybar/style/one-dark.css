@@ -37,6 +37,7 @@ window#waybar {
 #memory,
 #temperature,
 #battery,
+#custom-powerprofile,
 #tray,
 #custom-notification,
 #clock {

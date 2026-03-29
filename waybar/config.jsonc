@@ -18,6 +18,7 @@
 		"memory",
 		"temperature",
 		"battery",
+		"custom/powerprofile",
 		"tray",
 		"custom/notification"
 	],
@@ -118,6 +119,15 @@
 		"format-full": "󰁹 full",
 		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 		"tooltip-format": "{timeTo} · {power:.1f}W"
+	},
+	// ── Power Profile Selector ────────────────────────────────────────────────────
+	"custom/powerprofile": {
+		"exec": "~/.config/hypr/scripts/powerprofile-status.sh",
+		"return-type": "json",
+		"interval": 3,
+		"format": "{}",
+		"on-click": "~/.config/hypr/scripts/profile-menu.sh",
+		"tooltip": true
 	},
 
 	// ── System tray ───────────────────────────────────────────────────────────────
