@@ -176,6 +176,7 @@ __package_manager () {
     ${PM_COMMAND[@]} "$@"
 }
 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Aliases
 alias cls='clear' \
     in='__package_manager install' \
