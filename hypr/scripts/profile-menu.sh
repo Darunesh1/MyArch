@@ -3,7 +3,7 @@
 # Define the display options
 power="󰌪 Power Saving"
 balanced="⚖️ Balanced"
-performance="🚀 Ultra Performance"
+performance="󰾆 Ultra Performance"
 
 # Open Rofi menu using your existing launcher theme
 selected=$(echo -e "$power\n$balanced\n$performance" | rofi -dmenu -i -p "Power Profile:" -theme ~/.config/rofi/themes/launcher.rasi)

@@ -6,10 +6,10 @@ if [ "$profile" = "power-saver" ]; then
     icon="󰌪"
     text="Ultra Power Saving"
 elif [ "$profile" = "balanced" ]; then
-    icon="󰾆"
+    icon="⚖️"
     text="Balanced"
 elif [ "$profile" = "performance" ]; then
-    icon="󰓅"
+    icon="󰾆"
     text="Ultra Performance"
 else
     icon="󰾆"
