@@ -12,7 +12,7 @@ elif [ "$profile" = "performance" ]; then
     icon="󰾆"
     text="Ultra Performance"
 else
-    icon="󰾆"
+    icon="󰁾"
     text="Unknown"
 fi
 
