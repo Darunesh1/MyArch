@@ -11,12 +11,12 @@ selected=$(echo -e "$power\n$balanced\n$performance" | rofi -dmenu -i -p "Power 
 # Apply the chosen profile
 case $selected in
     "$power")
-        ~/.config/hypr/scripts/hypr-profile.sh power
+        ~/.config/hypr/scripts/power/hypr-profile.sh power
         ;;
     "$balanced")
-        ~/.config/hypr/scripts/hypr-profile.sh balanced
+        ~/.config/hypr/scripts/power/hypr-profile.sh balanced
         ;;
     "$performance")
-        ~/.config/hypr/scripts/hypr-profile.sh performance
+        ~/.config/hypr/scripts/power/hypr-profile.sh performance
         ;;
 esac
