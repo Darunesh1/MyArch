@@ -13,3 +13,9 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# For Game Mode
+if [ -f /tmp/game_mode_state ]; then
+    export MESA_GLTHREAD=true
+    export MESA_NO_ERROR=1
+fi
