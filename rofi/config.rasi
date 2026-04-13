@@ -21,8 +21,5 @@ configuration {
     scroll-method:      0;
     normalize-match:    true;
 
-    /* dmenu defaults (used by clipboard) */
-    dmenu {
-        display-name:   "󰅍  Clip";
-    }
+
 }

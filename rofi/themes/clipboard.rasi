@@ -2,6 +2,10 @@
 /* clipboard.rasi  —  cliphist picker                                        */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
+configuration {
+    display-dmenu: "󰅍  Clip";
+}
+
 * {
     bg0:        #1e2127f2;
     bg1:        #282c34f2;
