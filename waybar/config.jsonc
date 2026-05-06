@@ -108,7 +108,6 @@
 
 	// ── Battery ───────────────────────────────────────────────────────────────────
 	"battery": {
-		"bat": "BAT0",
 		"interval": 30,
 		"states": {
 			"full": 95,
@@ -117,7 +116,7 @@
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
-		"format-full": "󰁹 full",
+		"format-full": "󰁹 {capacity}%",
 		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 		"tooltip-format": "{timeTo} · {power:.1f}W"
 	},
