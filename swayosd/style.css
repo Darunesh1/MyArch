@@ -1,6 +1,6 @@
-@define-color base-color   #010103;
-@define-color accent-color #142433; 
-@define-color text-color   #A5FFFF;
+@define-color base-color   #030001;
+@define-color accent-color #361501; 
+@define-color text-color   #FF9B6F;
 
 /* Target the actual GTK window layer */
 window#osd {
