@@ -83,6 +83,14 @@
 		"on-click": "pavucontrol",
 		"ignored-sinks": ["Easy Effects Sink"]
 	},
+	// ── Backlight (Brightness) ────────────────────────────────────────────────────
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"on-scroll-up": "brightnessctl set 1%+",
+		"on-scroll-down": "brightnessctl set 1%-",
+		"tooltip": false
+	},
 
 	// ── CPU — using nf-md-cpu (U+F4BC) which renders reliably ─────────────────────
 	"cpu": {
