@@ -1,0 +1,7 @@
+# Wallust v4 configuration for MyArch
+
+backend = "fastresize"
+palette = "salience"
+
+[templates]
+swayosd = { template = 'swayosd.css', target = '~/.config/swayosd/style.css' }

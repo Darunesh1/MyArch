@@ -1,0 +1,17 @@
+/* Wallust automatically replaces these tags with hex colors */
+@define-color base-color   #020101;
+@define-color accent-color #1E1E1D; /* color4 is usually a vibrant accent */
+@define-color text-color   #E49E94;
+
+#window {
+  background-color: alpha(@base-color, 0.95);
+  border: 2px solid @accent-color;
+  color: @text-color;
+  margin-top: 20vh; /* Shifts the UI down */
+  border-radius: 15px;
+}
+
+/* Apply the accent color to the slider bar and icons */
+progress, trough, image {
+  color: @accent-color;
+}

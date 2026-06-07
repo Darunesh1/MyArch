@@ -13,6 +13,9 @@ while true; do
    # ... inside the while loop ...
 	awww img "$IMG" --transition-fps 60 --transition-type random --transition-duration 2
 
+	# Run wallust to generate colors from the new wallpaper
+	wallust run "$IMG"
+
 	# Create a symlink to the current wallpaper
 	ln -sf "$IMG" /home/darriour/Pictures/Wallpaper/current_wallpaper
 	# ...    # Wait for the specified interval before changing again
