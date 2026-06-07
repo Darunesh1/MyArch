@@ -8,15 +8,17 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://darriour.github.io',
+  url: 'https://Darunesh1.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/MyArch/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'darriour', // Usually your GitHub org/user name.
+  organizationName: 'Darunesh1', // Usually your GitHub org/user name.
   projectName: 'MyArch', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
@@ -74,7 +76,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/darriour/MyArch',
+          href: 'https://github.com/Darunesh1/MyArch',
           label: 'GitHub',
           position: 'right',
         },
@@ -101,7 +103,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/darriour/MyArch',
+              href: 'https://github.com/Darunesh1/MyArch',
             },
           ],
         },
