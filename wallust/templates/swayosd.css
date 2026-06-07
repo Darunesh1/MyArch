@@ -10,8 +10,8 @@ window#osd {
 /* Target the main inner container box */
 /* Support both #container (SwayOSD default) and #box */
 #container, #box {
-  background-color: alpha(@base-color, 0.95);
-  border: 2px solid @accent-color;
+  background-color: transparent; /* Removed background for a cleaner look */
+  border: none; /* Removed border */
   color: @text-color;
   border-radius: 15px;
   margin-top: 20vh; /* This positions it lower on the screen */
