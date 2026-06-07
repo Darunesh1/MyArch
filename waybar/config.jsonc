@@ -61,11 +61,12 @@
 	// ── Network (WiFi signal % + internet state) ──────────────────────────────────
 	"network": {
 		"interface": "wlan0",
-		"format-wifi": "󰤨 {signalStrength}%   ↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-		"format-ethernet": "󰊗 {ipaddr}   ↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+		"format": "{bandwidthDownBytes} {bandwidthUpBytes}", // <--- ADD THIS LINE to keep the tracker awake
+		"format-wifi": "󰤨 {signalStrength}%",
+		"format-ethernet": "󰊗 {ipaddr}",
 		"format-disconnected": "󰤭 off",
-		"tooltip-format-wifi": "{essid}  ·  {signalStrength}%  ·  {ipaddr}\n{frequency} GHz",
-		"tooltip-format-ethernet": "{ifname} · {ipaddr}",
+		"tooltip-format-wifi": "{essid}  ·  {signalStrength}%\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}\n{frequency} GHz",
+		"tooltip-format-ethernet": "{ifname} · {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
 		"tooltip-format-disconnected": "Disconnected",
 		"on-click": "nm-connection-editor",
 		"interval": 2
