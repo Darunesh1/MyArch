@@ -102,7 +102,7 @@
 	"custom/gpu": {
 		"exec": "$HOME/.config/waybar/scripts/intel-gpu.sh",
 		"return-type": "json",
-		"format": "󰢮 {}%",
+		"format": "󰢹 {}%",
 		"tooltip": false
 	},
 
