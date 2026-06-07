@@ -1,17 +1,23 @@
-/* Wallust automatically replaces these tags with hex colors */
 @define-color base-color   {{background}};
-@define-color accent-color {{color4}}; /* color4 is usually a vibrant accent */
+@define-color accent-color {{color4}}; 
 @define-color text-color   {{foreground}};
 
-#window {
+/* Target the actual GTK window layer */
+window#osd {
+  background-color: transparent;
+}
+
+/* Target the main inner container box */
+#box {
   background-color: alpha(@base-color, 0.95);
   border: 2px solid @accent-color;
   color: @text-color;
-  margin-top: 20vh; /* Shifts the UI down */
   border-radius: 15px;
+  margin-top: 20vh; /* This positions it lower on the screen */
+  padding: 12px;
 }
 
-/* Apply the accent color to the slider bar and icons */
+/* Force icons and progress bars to inherit your wallpaper accent color */
 progress, trough, image {
   color: @accent-color;
 }
