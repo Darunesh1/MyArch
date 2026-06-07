@@ -98,6 +98,13 @@
 		"interval": 3,
 		"tooltip": false
 	},
+	// ── GPU Usage (Intel Iris Xe) ─────────────────────────────────────────────────
+	"custom/gpu": {
+		"exec": "$HOME/.config/waybar/scripts/intel-gpu.sh",
+		"return-type": "json",
+		"format": "󰢮 {}%",
+		"tooltip": false
+	}
 
 	// ── Memory — using nf-md-memory (U+F1521) ─────────────────────────────────────
 	"memory": {
