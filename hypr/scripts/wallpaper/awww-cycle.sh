@@ -9,15 +9,20 @@ while true; do
     IMG=$(find "$WALLPAPER_DIR" -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) | shuf -n 1)
     
     # Apply the wallpaper with a smooth transition
-    # You can change the transition-type to: simple, fade, left, right, top, bottom, wipe, wave, grow, center
-   # ... inside the while loop ...
-	awww img "$IMG" --transition-fps 60 --transition-type random --transition-duration 2
+    awww img "$IMG" --transition-fps 60 --transition-type random --transition-duration 2
 
-	# Run wallust to generate colors from the new wallpaper
-	wallust run "$IMG"
+    # Run wallust to generate colors from the new wallpaper
+    wallust run "$IMG"
 
-	# Create a symlink to the current wallpaper
-	ln -sf "$IMG" /home/darriour/Pictures/Wallpaper/current_wallpaper
-	# ...    # Wait for the specified interval before changing again
+    # ── RELOAD SEQUENCE ─────────────────────────────────────────────────────
+    # Kill the existing daemon and spawn a new one to process the updated CSS
+    killall swayosd-server
+    swayosd-server > /dev/null 2>&1 & disown
+    # ────────────────────────────────────────────────────────────────────────
+
+    # Create a symlink to the current wallpaper
+    ln -sf "$IMG" /home/darriour/Pictures/Wallpaper/current_wallpaper
+    
+    # Wait for the specified interval before changing again
     sleep $INTERVAL
 done
