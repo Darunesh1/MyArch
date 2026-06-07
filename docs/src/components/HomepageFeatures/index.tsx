@@ -11,32 +11,33 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Dynamic Theming',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Powered by <code>wallust</code>, your system automatically generates 
+        a beautiful color palette from your current wallpaper and applies it 
+        to all UI components.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Optimized Performance',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        High-performance custom scripts, like our continuous GPU usage tracker, 
+        provide real-time data with effectively zero CPU overhead.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Minimalist Design',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        A clean, focused environment featuring a modern Hyprland setup, 
+        a custom special workspace dim effect, and polished OSD components.
       </>
     ),
   },
