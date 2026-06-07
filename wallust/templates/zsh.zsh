@@ -10,27 +10,40 @@ export WALLUST_ACCENT="{{color4}}"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg={{color4}}"
 
 # Fix syntax highlighting visibility
-# Fast-syntax-highlighting (FSH) and zsh-syntax-highlighting (ZSH-SH)
-# We force commands and strings to use visible colors from your wallpaper palette
+# We use an init hook to ensure these are applied AFTER the plugin loads
+_apply_wallust_colors() {
+    # Ensure the array exists
+    typeset -gA ZSH_HIGHLIGHT_STYLES
 
-# If using zdharma-continuum/fast-syntax-highlighting (FSH)
-# We use the 'chroma' or 'theme' settings if available, 
-# but simply overriding basic styles works for both.
+    # Commands (Valid) - use accent color for high visibility
+    ZSH_HIGHLIGHT_STYLES[command]="fg={{color4}},bold"
+    ZSH_HIGHLIGHT_STYLES[alias]="fg={{color4}}"
+    ZSH_HIGHLIGHT_STYLES[builtin]="fg={{color4}}"
+    ZSH_HIGHLIGHT_STYLES[function]="fg={{color4}}"
 
-# Commands (Valid)
-ZSH_HIGHLIGHT_STYLES[command]="fg={{color4}},bold"
-ZSH_HIGHLIGHT_STYLES[alias]="fg={{color4}}"
-ZSH_HIGHLIGHT_STYLES[builtin]="fg={{color4}}"
-ZSH_HIGHLIGHT_STYLES[function]="fg={{color4}}"
+    # Arguments and generic text
+    ZSH_HIGHLIGHT_STYLES[arg0]="fg={{foreground}}"
+    ZSH_HIGHLIGHT_STYLES[default]="fg={{foreground}}"
 
-# Arguments and generic text
-ZSH_HIGHLIGHT_STYLES[arg0]="fg={{foreground}}"
-ZSH_HIGHLIGHT_STYLES[default]="fg={{foreground}}"
+    # Strings and constants
+    ZSH_HIGHLIGHT_STYLES[string]="fg={{color15}}"
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg={{color5}}"
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg={{color5}}"
 
-# Strings and constants
-ZSH_HIGHLIGHT_STYLES[string]="fg={{color7}}"
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg={{color5}}"
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg={{color5}}"
+    # Errors
+    ZSH_HIGHLIGHT_STYLES[unknown-token]="fg={{color1}},underline"
+}
 
-# Errors (Make sure they are visible - use color 9 but fallback to accent if needed)
-ZSH_HIGHLIGHT_STYLES[unknown-token]="fg={{color1}},underline"
+# Run now
+_apply_wallust_colors
+
+# Also schedule it to run after all scripts are initialized
+# This handles plugins that might reset styles during their own init
+zprezto_module_loaded() { _apply_wallust_colors } # For prezto users
+autoload -Uz add-zsh-hook
+_apply_wallust_colors_hook() {
+    _apply_wallust_colors
+    # Remove ourselves after one run to stay clean
+    add-zsh-hook -d precmd _apply_wallust_colors_hook
+}
+add-zsh-hook precmd _apply_wallust_colors_hook
