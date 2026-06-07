@@ -1,2 +1,6 @@
 zsh/.zsh_history
 .zcompdump*
+docs/node_modules/
+docs/.docusaurus/
+docs/.cache-loader/
+docs/build/

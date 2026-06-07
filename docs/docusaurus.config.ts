@@ -19,7 +19,19 @@ const config: Config = {
   projectName: 'MyArch', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    format: 'mdx',
+    mermaid: true,
+    preprocessor: ({filePath, fileContent}) => {
+      return fileContent;
+    },
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -31,7 +43,7 @@ const config: Config = {
 
   presets: [
     [
-      'preset-classic',
+      'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
