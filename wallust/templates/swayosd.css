@@ -8,7 +8,8 @@ window#osd {
 }
 
 /* Target the main inner container box */
-#box {
+/* Support both #container (SwayOSD default) and #box */
+#container, #box {
   background-color: alpha(@base-color, 0.95);
   border: 2px solid @accent-color;
   color: @text-color;
@@ -17,7 +18,16 @@ window#osd {
   padding: 12px;
 }
 
-/* Force icons and progress bars to inherit your wallpaper accent color */
-progress, trough, image {
+/* Force icons, labels, and progress bars to inherit your wallpaper accent color */
+progress, trough, image, label, icon {
   color: @accent-color;
+}
+
+/* Ensure images (icons) are visible and not muted/hidden */
+image {
+  opacity: 1;
+}
+
+image:disabled {
+  opacity: 0.5;
 }
