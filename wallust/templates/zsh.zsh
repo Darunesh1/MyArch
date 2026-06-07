@@ -9,7 +9,28 @@ export WALLUST_ACCENT="{{color4}}"
 # Autosuggestions - use accent color instead of potentially invisible gray
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg={{color4}}"
 
-# Syntax highlighting overrides (examples)
-# typeset -A ZSH_HIGHLIGHT_STYLES
-# ZSH_HIGHLIGHT_STYLES[command]="fg={{color4}},bold"
-# ZSH_HIGHLIGHT_STYLES[alias]="fg={{color4}}"
+# Fix syntax highlighting visibility
+# Fast-syntax-highlighting (FSH) and zsh-syntax-highlighting (ZSH-SH)
+# We force commands and strings to use visible colors from your wallpaper palette
+
+# If using zdharma-continuum/fast-syntax-highlighting (FSH)
+# We use the 'chroma' or 'theme' settings if available, 
+# but simply overriding basic styles works for both.
+
+# Commands (Valid)
+ZSH_HIGHLIGHT_STYLES[command]="fg={{color4}},bold"
+ZSH_HIGHLIGHT_STYLES[alias]="fg={{color4}}"
+ZSH_HIGHLIGHT_STYLES[builtin]="fg={{color4}}"
+ZSH_HIGHLIGHT_STYLES[function]="fg={{color4}}"
+
+# Arguments and generic text
+ZSH_HIGHLIGHT_STYLES[arg0]="fg={{foreground}}"
+ZSH_HIGHLIGHT_STYLES[default]="fg={{foreground}}"
+
+# Strings and constants
+ZSH_HIGHLIGHT_STYLES[string]="fg={{color7}}"
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg={{color5}}"
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg={{color5}}"
+
+# Errors (Make sure they are visible - use color 9 but fallback to accent if needed)
+ZSH_HIGHLIGHT_STYLES[unknown-token]="fg={{color1}},underline"
