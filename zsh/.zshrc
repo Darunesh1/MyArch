@@ -19,3 +19,11 @@ if [ -f /tmp/game_mode_state ]; then
     export MESA_GLTHREAD=true
     export MESA_NO_ERROR=1
 fi
+
+# pnpm
+export PNPM_HOME="/home/darriour/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
