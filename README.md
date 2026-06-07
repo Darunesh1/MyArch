@@ -3,50 +3,53 @@
 [![Documentation](https://img.shields.io/badge/docs-view-blue?style=flat-square)](https://darriour.github.io/MyArch/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-Hyprland dotfiles configuration for Arch Linux with Waybar, Kitty, and more.
+A modern, minimalist, and highly dynamic Hyprland configuration for Arch Linux.
+
+## ✨ Features
+
+- 🎨 **Dynamic Theming**: Entire system colors (Hyprland, Waybar, SwayOSD, Hyprlock, wlogout) automatically adapt to your wallpaper via `wallust`.
+- 🚀 **Performance Optimized**: High-performance continuous GPU usage tracking and native Waybar modules for zero-overhead monitoring.
+- 🌫️ **Focus Mode**: Custom "Special Workspace Dim" effect ensures maximum productivity without blurring your status bar.
+- 🛠️ **Fully Automated**: Automated wallpaper cycling with smooth transitions and instant theme synchronization.
 
 ## 📚 Documentation
 
 For detailed setup instructions and configuration guides, visit the **[MyArch Documentation](https://darriour.github.io/MyArch/)**.
 
 ### Quick Links
+- [Installation Guide](https://darriour.github.io/MyArch/installation)
+- [Dynamic Theming Setup](https://darriour.github.io/MyArch/configuration/theming)
+- [Hyprland Keybindings](https://darriour.github.io/MyArch/configuration/hyprland)
 
-- [Getting Started](https://darriour.github.io/MyArch/getting-started/) - Installation guide
-- [Keybindings Reference](https://darriour.github.io/MyArch/hyprland/keybindings/) - All keyboard shortcuts
-- [Configuration Guide](https://darriour.github.io/MyArch/hyprland/configuration/) - Detailed config breakdown
-
-## Components
+## 🖥️ Components
 
 | Component | Description |
 |-----------|-------------|
-| **Hyprland** | Dynamic tiling Wayland compositor with animations and dwindle layout |
-| **Waybar** | Customizable status bar with One Dark theme |
-| **Kitty** | GPU-accelerated terminal with custom layouts |
+| **Hyprland** | Smooth tiling window management with dynamic animations. |
+| **Waybar** | Optimized status bar with real-time system monitoring. |
+| **SwayOSD** | Polished, dynamically themed on-screen displays for volume and brightness. |
+| **Wallust** | The engine behind the wallpaper-based color generation. |
+| **Hyprlock** | Secure and aesthetically synced lock screen. |
+| **wlogout** | Modern, transparent power menu. |
 
-## Features
-
-- ✨ Smooth animations with bezier curves
-- 🎨 One Dark color scheme
-- 🖼️ Automatic wallpaper cycling with transitions
-- 📋 Clipboard management with cliphist
-- 📸 Screenshot tools (grim + slurp)
-- 🔒 Secure screen locking with hyprlock
-
-## Quick Install
+## 🚀 Quick Install
 
 ```bash
 # Clone the repository
 git clone https://github.com/darriour/MyArch.git
 cd MyArch
 
-# Create symlinks
+# Link configurations (Run the setup script or link manually)
 ln -s $(pwd)/hypr ~/.config/hypr
 ln -s $(pwd)/waybar ~/.config/waybar
 ln -s $(pwd)/kitty ~/.config/kitty
+ln -s $(pwd)/swayosd ~/.config/swayosd
+ln -s $(pwd)/wallust ~/.config/wallust
+ln -s $(pwd)/wlogout ~/.config/wlogout
 ```
 
-See the [full installation guide](https://darriour.github.io/MyArch/getting-started/) for dependencies and setup.
+See the [full installation guide](https://darriour.github.io/MyArch/installation) for full dependency list and detailed setup.
 
-## License
+## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
