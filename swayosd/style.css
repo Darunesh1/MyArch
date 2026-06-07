@@ -1,6 +1,6 @@
-@define-color base-color   #030000;
-@define-color accent-color #785B22; 
-@define-color text-color   #D4CB6E;
+@define-color base-color   #020100;
+@define-color accent-color #0B2394; 
+@define-color text-color   #FF785E;
 
 /* Target the actual GTK window layer */
 window#osd {
@@ -8,16 +8,26 @@ window#osd {
 }
 
 /* Target the main inner container box */
-#box {
-  background-color: alpha(@base-color, 0.95);
-  border: 2px solid @accent-color;
+/* Support both #container (SwayOSD default) and #box */
+#container, #box {
+  background-color: transparent; /* Removed background for a cleaner look */
+  border: none; /* Removed border */
   color: @text-color;
   border-radius: 15px;
   margin-top: 20vh; /* This positions it lower on the screen */
   padding: 12px;
 }
 
-/* Force icons and progress bars to inherit your wallpaper accent color */
-progress, trough, image {
+/* Force icons, labels, and progress bars to inherit your wallpaper accent color */
+progress, trough, image, label, icon {
   color: @accent-color;
+}
+
+/* Ensure images (icons) are visible and not muted/hidden */
+image {
+  opacity: 1;
+}
+
+image:disabled {
+  opacity: 0.5;
 }

@@ -5,12 +5,12 @@
 }
 
 window {
-    background-color: rgba(10, 10, 15, 0.8); /* Dark semi-transparent background */
+    background-color: alpha(#020100, 0.8); /* Wallust dynamic background */
 }
 
 button {
-    color: #FFFFFF;
-    background-color: #2b2b36; /* The dark grey box color */
+    color: #FF785E;
+    background-color: alpha(#020100, 0.5); /* Wallust dynamic button color */
     outline-style: none;
     border: none;
     border-radius: 20px; /* Uniform rounded corners */
@@ -22,31 +22,31 @@ button {
 }
 
 button:hover, button:active, button:focus {
-    background-color: #3b3b4a; /* Slightly lighter on hover */
+    background-color: #0B2394; /* Wallpaper accent on hover */
     background-size: 30%; /* Gentle zoom effect */
 }
 
 /* Icon Paths */
 #lock {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/lock_white.png"), url("/usr/share/wlogout/icons/lock.png"));
 }
 
 #logout {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/logout_white.png"), url("/usr/share/wlogout/icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/suspend_white.png"), url("/usr/share/wlogout/icons/suspend.png"));
 }
 
 #hibernate {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/hibernate.png"), url("/usr/share/wlogout/icons/hibernate.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/hibernate_white.png"), url("/usr/share/wlogout/icons/hibernate.png"));
 }
 
 #shutdown {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/shutdown_white.png"), url("/usr/share/wlogout/icons/shutdown.png"));
 }
 
 #reboot {
-    background-image: image(url("/home/darriour/.config/wlogout/icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png"));
+    background-image: image(url("/home/darriour/.config/wlogout/icons/reboot_white.png"), url("/usr/share/wlogout/icons/reboot.png"));
 }
