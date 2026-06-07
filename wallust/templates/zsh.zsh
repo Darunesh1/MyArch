@@ -15,18 +15,19 @@ _apply_wallust_colors() {
     # Ensure the array exists
     typeset -gA ZSH_HIGHLIGHT_STYLES
 
-    # Commands (Valid) - use accent color for high visibility
-    ZSH_HIGHLIGHT_STYLES[command]="fg={{color4}},bold"
-    ZSH_HIGHLIGHT_STYLES[alias]="fg={{color4}}"
-    ZSH_HIGHLIGHT_STYLES[builtin]="fg={{color4}}"
-    ZSH_HIGHLIGHT_STYLES[function]="fg={{color4}}"
+    # Commands (Valid) - We use FOREGROUND here to guarantee visibility
+    # because it is always high-contrast against the background.
+    ZSH_HIGHLIGHT_STYLES[command]="fg={{foreground}},bold"
+    ZSH_HIGHLIGHT_STYLES[alias]="fg={{foreground}},bold"
+    ZSH_HIGHLIGHT_STYLES[builtin]="fg={{foreground}},bold"
+    ZSH_HIGHLIGHT_STYLES[function]="fg={{foreground}},bold"
 
     # Arguments and generic text
     ZSH_HIGHLIGHT_STYLES[arg0]="fg={{foreground}}"
     ZSH_HIGHLIGHT_STYLES[default]="fg={{foreground}}"
 
     # Strings and constants
-    ZSH_HIGHLIGHT_STYLES[string]="fg={{color15}}"
+    ZSH_HIGHLIGHT_STYLES[string]="fg={{color7}}"
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg={{color5}}"
     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]="fg={{color5}}"
 
@@ -39,7 +40,6 @@ _apply_wallust_colors
 
 # Also schedule it to run after all scripts are initialized
 # This handles plugins that might reset styles during their own init
-zprezto_module_loaded() { _apply_wallust_colors } # For prezto users
 autoload -Uz add-zsh-hook
 _apply_wallust_colors_hook() {
     _apply_wallust_colors
