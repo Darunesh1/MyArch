@@ -1,3 +1,6 @@
+# Source dynamic colors
+[[ -f ~/.config/zsh/wallust-colors.zsh ]] && source ~/.config/zsh/wallust-colors.zsh
+
 # Startup Commands
 # Commands to execute on startup (before the prompt is shown)
 if [[ $- == *i* ]]; then
@@ -11,6 +14,8 @@ if [[ $- == *i* ]]; then
         fi
     fi
 fi
+
+alias gwine="gamemoderun wine"
 
 # Configuration Overrides
 # ZSH_NO_PLUGINS=1      # Set to 1 to disable plugin loading

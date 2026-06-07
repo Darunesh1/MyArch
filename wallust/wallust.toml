@@ -7,3 +7,5 @@ palette = "salience"
 swayosd = { template = 'swayosd.css', target = '~/.config/swayosd/style.css' }
 hyprlock = { template = 'hyprlock.conf', target = '~/.config/hypr/hyprlock-colors.conf' }
 wlogout = { template = 'wlogout.css', target = '~/.config/wlogout/style.css' }
+kitty = { template = 'kitty.conf', target = '~/.config/kitty/kitty-theme.conf' }
+zsh = { template = 'zsh.zsh', target = '~/.config/zsh/wallust-colors.zsh' }
